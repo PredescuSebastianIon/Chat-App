@@ -1,0 +1,57 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/out
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.parcel-cache
+.vscode
+*.log
+*.log.*
+.eslintcache
+
+# editor directories and files
+.idea
+.fleet
+.project
+.settings
+.vs
+.vscode/
+
+# MacOS
+.DS_Store
+.Trashes
+.Spotlight-V100
+.TemporaryItems
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*.swp
+*.bak
+*.pyc
+
+# Local development specific files
+# Example: If you have a local server config or mock data
+# /src/api/config.local.js
+# /src/data/mock-data.json
