@@ -1,5 +1,10 @@
 # Proiect Chat App in React si in java
-predescu sebastian 
-voicu mihai
+**Autori**:
+- Predescu sebastian
+- Voicu mihai
 
-## idk
+
+Schimbam in ce facem proiectul:
+- Il facem front-end ul in html, css si javascript (fara framework)
+- Facem back-end ul in java
+

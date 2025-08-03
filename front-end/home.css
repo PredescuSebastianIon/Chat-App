@@ -1,0 +1,32 @@
+#home_page {
+    /* float: none; */
+    overflow: hidden;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+#optiuni {
+    float: left;
+    overflow: hidden;
+}
+
+.butoane_optiuni {
+    float: left;
+    clear: both;
+}
+
+.persoane {
+    height: 100vh;
+    width: 30vh;
+    float: left;
+    /* border-left: 10px; */
+    margin-left: 2vh;
+}
+
+#titlu_persoane {
+
+}
+
+.conversatie {
+
+}
