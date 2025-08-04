@@ -1,32 +1,49 @@
 #home_page {
-    /* float: none; */
     overflow: hidden;
-    display: flex;
-    /* justify-content: space-between; */
 }
 
 #optiuni {
+    margin-top: 50px;
     float: left;
     overflow: hidden;
-}
-
-.butoane_optiuni {
-    float: left;
-    clear: both;
+    .butoane_optiuni {
+        margin-top: 10px;
+        float: left;
+        clear: both;
+        text-align: center;
+    }
 }
 
 .persoane {
-    height: 100vh;
-    width: 30vh;
+    margin-top: 10px;
+    height: 1000px;
+    width: 500px;
     float: left;
-    /* border-left: 10px; */
     margin-left: 2vh;
-}
 
-#titlu_persoane {
+    #titlu_persoane {
+        float: left;
+    }
 
-}
+    input {
+        float: left;
+        clear: left;
+    }
 
-.conversatie {
-
+    .conversatie {
+        display: flex;
+        align-items: center;
+        float: left;
+        clear: both;
+        img {
+            width: 150px;
+            border-radius: 75px;
+            float: left;
+            clear: left;
+            margin: 10px;
+        }
+        p {
+            float: left;
+        }
+    }
 }
