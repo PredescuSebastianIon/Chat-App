@@ -1,0 +1,74 @@
+/* HOME PAGE */
+#home_page {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* OPTIUNI */
+.optiuni {
+    margin-top: 50px;
+    float: left;
+    overflow: hidden;
+    width: 20%;
+}
+
+.optiuni .butoane_optiuni {
+    margin-top: 10px;
+    float: left;
+    clear: both;
+    text-align: center;
+}
+
+/* PERSOANE */
+.persoane {
+    margin-top: 10px;
+    height: auto;
+    width: 28%;
+    margin-left: 2%;
+    float: left;
+}
+
+.persoane #titlu_persoane {
+    float: left;
+}
+
+.persoane input {
+    float: left;
+    clear: left;
+}
+
+.persoane ul {
+    margin: 0;
+    padding: 0;
+}
+
+.persoane .conversatie {
+    display: flex;
+    align-items: center;
+    float: left;
+    clear: both;
+    margin: 0;
+}
+.persoane .conversatie img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    float: left;
+    clear: left;
+    padding: 0;
+    margin: 10px 10px 10px 0px;
+}
+
+.persoane .conversatie p {
+    float: left;
+}
+
+/* MESAJE */
+.mesaje {
+    background-color: gray;
+    width: 48%;
+    float: left;
+}
