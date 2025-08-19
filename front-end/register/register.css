@@ -1,9 +1,5 @@
 body{
-    background-image: url("../assets/Background2-Login-Register.jpg") ;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size:cover;
+    background-color:#7eabf2;
     height: 100vh;
     width: 100%;
     display: flex;
