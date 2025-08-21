@@ -17,4 +17,14 @@ public class PageController {
         //     "../../../../../../../front-end/home/home.html"));
         return "home";
     }
+
+    @GetMapping(path = "/login")
+    public String Login() throws IOException {
+        return "login";
+    }
+
+    @GetMapping(path = "/register")
+    public String Register() throws IOException {
+        return "register";
+    }
 }

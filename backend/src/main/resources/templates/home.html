@@ -4,41 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./home.css" />
-    <title>Chat-App</title>
+    <link rel="stylesheet" href="/css/home.css" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div id="home_page">
-
-        <div class="optiuni">
-            <button class="butoane_optiuni">Toate conversatiile</button>
-            <button class="butoane_optiuni">Conversatii necitite</button>
+    <div class="layout">
+        <div class="coloana-optiuni">
+            <button class="buton-optiuni"> <img src="/assets/default_user.jpg" class="icon-user"></button>
+            <button class="buton-optiuni"><img class="icon" src="/assets/IconConversatii.png"></button>
+            <button class="buton-optiuni"><img class="icon" src="/assets/IconPrietenii.png"></button>
+            <button class="buton-optiuni"><img class="icon" src="/assets/IconSetari.png"></button>
         </div>
 
-        <div class="persoane">
-            <h2 id="titlu_persoane">Conversatii</h2>
-            <input type="search" placeholder="Cautati persoane" />
 
+        <div class="coloana-dreapta">
             <ul>
-                <li class="conversatie">
-                    <img src="../assets/romania.jpg" alt="./assets/default_user.jpg">
-                    <p>Romania</p>
-                </li>
-
-                <li class="conversatie">
-                    <img src="../assets/thailanda.jpg" alt="./assets/default_user.jpg">
-                    <p>Thailanda</p>
+                <li> <input id="search-bar" type="text" placeholder="Search Conversations"> </li>
+                <li> <button class="prieten"><img src="/assets/default_user.jpg" class="icon-user"> Ionut Laba </button>
                 </li>
             </ul>
+
         </div>
 
-        <div class="mesaje">
-            <img src="../assets/default_user.jpg" alt="">
+        <div class="chat">
+
         </div>
+
     </div>
 
-    <script src="home.js"></script>
+
+
+    <script src="/javascript/home.js"></script>
 </body>
 
 </html>
