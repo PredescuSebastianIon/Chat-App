@@ -6,28 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIgn up</title>
     <link rel="stylesheet" href="/css/register.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    
-        <div class="register_form">
-            <h1 id="h1">Sign up</h1>
-            <h1 id="h2">Please eneter your details</h1>
-            <input class="casete" type="text" placeholder="Last Name">
-            <input class="casete" type="text" placeholder="First Name">
-            <input class="casete" type="text" placeholder="Phone Number">
-            <input class="casete" type="text" placeholder="Email">
-            <input class="casete" type="text" placeholder="Username">
-            <input class="casete" type="text" placeholder="Password">
-            <input class="casete" type="text" placeholder="Repeat password">
-            <div id="row">
-                <span id="text">Or login
-                <a id="link" href="login">here</a></span>
-                <span><button id="butondone">Done</button></span>
-            </div>
+
+    <form class="register_form">
+        <h1 id="h1">Sign up</h1>
+        <h1 id="h2">Please enter your details</h1>
+        <input class="casete" type="text" placeholder="Last Name">
+        <input class="casete" type="text" placeholder="First Name">
+        <input class="casete" type="text" placeholder="Phone Number">
+        <input class="casete" type="text" id="email" placeholder="Email">
+        <input class="casete" type="text" id="username" placeholder="Username">
+        <input class="casete" type="password" id="password" placeholder="Password">
+        <input class="casete" type="password" id="repeatPassword" placeholder="Repeat password">
+        <div id="row">
+            <span id="text">
+                Or login <a id="link" href="login">here</a>
+            </span>
+            <span>
+                <button id="butondone" type="button">Done</button>
+            </span>
         </div>
-    
+    </form>
+
+    <script src="/javascript/register.js"></script>
+
 </body>
 
 </html>
