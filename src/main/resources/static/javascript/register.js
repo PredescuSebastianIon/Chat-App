@@ -13,7 +13,12 @@ async function submit() {
         email
     }
 
-    if (password === repeatPassword) {
+    if (!email || !username) {
+        alert("Please complete email and username fields!");
+        return;
+    }
+
+    if (password && password === repeatPassword) {
         const jsonData = JSON.stringify(data);
         fetch("/register", {
             method: "POST",
@@ -23,8 +28,11 @@ async function submit() {
             body: jsonData
         })
         .then(response => {
-            // To do later
-            alert("registrare reusita");
+            alert("Registered succesfully!");
+            window.location.href = "/login";
         })
+    }
+    else {
+        alert("Passwords fields are empty or doesn't match!");
     }
 }

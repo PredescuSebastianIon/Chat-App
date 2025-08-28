@@ -11,7 +11,7 @@
 	<groupId>com.chat</groupId>
 	<artifactId>backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>back-end</name>
+	<name>Chat-App</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
