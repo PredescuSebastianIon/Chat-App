@@ -24,4 +24,10 @@ public class PageController {
     public String Register() throws IOException {
         return "register";
     }
+
+    @GetMapping(path = "/friends")
+    public String Friends() throws IOException {
+        return "friends";
+    }
 }
+
