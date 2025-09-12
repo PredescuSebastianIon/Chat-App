@@ -1,38 +1,15 @@
-const submitButton = document.getElementById("butondone");
-submitButton.addEventListener("click", submit)
+const form = document.querySelector(".register_form");
+form.addEventListener("submit", submitCheck);
 
-async function submit() {
-    const email = document.getElementById("email").value;
-    const username = document.getElementById("username").value;
+function submitCheck(event) {
     const password = document.getElementById("password").value;
     const repeatPassword = document.getElementById("repeatPassword").value;
 
-    const data = {
-        username,
-        password,
-        email
-    }
-
-    if (!email || !username) {
-        alert("Please complete email and username fields!");
-        return;
-    }
-
-    if (password && password === repeatPassword) {
-        const jsonData = JSON.stringify(data);
-        fetch("/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: jsonData
-        })
-        .then(response => {
-            alert("Registered succesfully!");
-            window.location.href = "/login";
-        })
+    if (!password || password !== repeatPassword) {
+        event.preventDefault();
+        document.getElementById("frontEndErrors").innerText = "The passwords doesn't coincide";
     }
     else {
-        alert("Passwords fields are empty or doesn't match!");
+        document.getElementById("frontEndErrors").innerText = "";
     }
 }

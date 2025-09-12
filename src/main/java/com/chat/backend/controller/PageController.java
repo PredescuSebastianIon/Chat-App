@@ -1,11 +1,8 @@
 package com.chat.backend.controller;
-// import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 @Controller
 public class PageController {

@@ -12,24 +12,26 @@
 
 <body>
 
-    <form class="register_form">
+    <form class="register_form" action="/register" method="post">
         <h1 id="h1">Sign up</h1>
         <h1 id="h2">Please enter your details</h1>
         <input class="casete" type="text" placeholder="Last Name">
         <input class="casete" type="text" placeholder="First Name">
         <input class="casete" type="text" placeholder="Phone Number">
-        <input class="casete" type="text" id="email" placeholder="Email">
-        <input class="casete" type="text" id="username" placeholder="Username">
-        <input class="casete" type="password" id="password" placeholder="Password">
-        <input class="casete" type="password" id="repeatPassword" placeholder="Repeat password">
+        <input class="casete" type="text" name="email" id="email" placeholder="Email" required>
+        <input class="casete" type="text" name="username" id="username" placeholder="Username" required>
+        <input class="casete" type="password" name="password" id="password" placeholder="Password" required>
+        <input class="casete" type="password" id="repeatPassword" placeholder="Repeat password" required>
         <div id="row">
             <span id="text">
-                Or login <a id="link" href="login">here</a>
+                Or login <a id="link" href="/login">here</a>
             </span>
             <span>
-                <button id="butondone" type="button">Done</button>
+                <button id="butondone" type="submit">Register</button>
             </span>
         </div>
+        <p th:text="${regErrorBackend}" style="color: red; white-space: pre-line"></p>
+        <p id="frontEndErrors" style="color: red; white-space: pre-line"></p>
     </form>
 
     <script src="/javascript/register.js"></script>
