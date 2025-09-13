@@ -28,16 +28,27 @@
         </ul>
     </nav>
 
-    <ul id="lista-casete">
-        <li><input class="search-bar" placeholder="Search Friends"></li>
-        <li class="chat">
-            <img class="chat-img" src="/assets/default_user.jpg" alt="Profile-Pic">
-            <button class="chat-friend">Nume Prieten</button>
-        </li>
-    </ul>
+    <div id="lista-casete">
+        <form action="/api/search/users" method="get">
+            <input class="search-bar" name="username" th:value="${usernameSearched}" placeholder="Search Friends">
+            <button type="submit">Search</button>
+        </form>
+<!--        <li class="chat">-->
+<!--            <img class="chat-img" src="/assets/default_user.jpg" alt="Profile-Pic">-->
+<!--            <button class="chat-friend">Nume Prieten</button>-->
 
+<!--        </li>-->
 
-
+        <p th:if="${#lists.isEmpty(users)}">No users found.</p>
+        <ul th:if="${!#lists.isEmpty(users)}">
+            <li class="chat" th:each="u : ${users}">
+                <strong th:text="${u.username}">username</strong>
+                <span> — </span>
+                <span th:text="${u.email}">email</span>
+                <button>Send Message</button>
+            </li>
+        </ul>
+    </div>
 
     <script src="/javascript/friends.js"></script>
 </body>

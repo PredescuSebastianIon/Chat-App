@@ -1,5 +1,6 @@
 package com.chat.backend.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.chat.backend.model.UserModel;
@@ -13,4 +14,6 @@ public interface UserRepository extends JpaRepository <UserModel, Long> {
 
     boolean existsByUsername(String username);
     boolean existsByEmail(String email);
+
+    List<UserModel> findTop25ByUsernameContainingIgnoreCase(String username);
 }
