@@ -17,30 +17,28 @@ import java.util.List;
 
 @Configuration
 @EnableWebSocketMessageBroker
-
-
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry)
     {
-        registry.enableSimpleBroker("/user");
+        registry.enableSimpleBroker("/queue", "/topic");
         registry.setApplicationDestinationPrefixes("/app");
         registry.setUserDestinationPrefix("/user");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/websocket").withSockJS();
+        registry.addEndpoint("/websockets").withSockJS();
     }
 
-    @Override
-    public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
-        DefaultContentTypeResolver resolver = new DefaultContentTypeResolver();
-        resolver.setDefaultMimeType(MimeTypeUtils.APPLICATION_JSON);
-        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
-        converter.setObjectMapper(new ObjectMapper());
-        converter.setContentTypeResolver(resolver);
-        messageConverters.add(converter);
-        return false;
-    }
+//    @Override
+//    public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
+//        DefaultContentTypeResolver resolver = new DefaultContentTypeResolver();
+//        resolver.setDefaultMimeType(MimeTypeUtils.APPLICATION_JSON);
+//        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+//        converter.setObjectMapper(new ObjectMapper());
+//        converter.setContentTypeResolver(resolver);
+//        messageConverters.add(converter);
+//        return false;
+//    }
 }

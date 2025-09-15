@@ -1,8 +1,3 @@
 package com.chat.backend.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter @Setter
-public class MessageDto {
-}
+public record MessageDto(Long chatId, String content) {}

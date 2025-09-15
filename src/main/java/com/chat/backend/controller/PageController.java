@@ -26,5 +26,10 @@ public class PageController {
     public String Friends() throws IOException {
         return "friends";
     }
+
+    @GetMapping("/chat/{chatId}")
+    public String chat(@PathVariable Long chatId) {
+        return "chat";
+    }
 }
 

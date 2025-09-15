@@ -1,0 +1,183 @@
+/* ===== Base ===== */
+:root{
+    --bg: #0f172a;         /* slate-900 */
+    --panel: #111827;      /* gray-900 */
+    --muted: #94a3b8;      /* slate-400 */
+    --text: #e5e7eb;       /* gray-200 */
+    --accent: #4f46e5;     /* indigo-600 */
+    --accent-2: #22c55e;   /* green-500 */
+    --danger: #ef4444;     /* red-500 */
+    --bubble: #1f2937;     /* gray-800 */
+    --bubble-me: #4338ca;  /* indigo-700 */
+    --shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: radial-gradient(1200px 1200px at 100% -200px, rgba(79,70,229,0.12), transparent 40%),
+    radial-gradient(1400px 1200px at -200px 100%, rgba(34,197,94,0.10), transparent 40%),
+    var(--bg);
+    color: var(--text);
+    font: 16px/1.45 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ===== Top Nav ===== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    backdrop-filter: blur(6px);
+    background: color-mix(in oklab, var(--bg) 85%, transparent);
+    border-bottom: 1px solid rgba(148,163,184,.15);
+}
+nav a {
+    display: inline-block;
+    padding: 14px 18px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: .2px;
+}
+nav a:hover { color: #fff; }
+
+/* ===== Layout ===== */
+main {
+    height: calc(100vh - 48px); /* 48px ~ nav height */
+    display: grid;
+    grid-template-rows: 1fr auto; /* messages / composer */
+}
+
+/* ===== Messages List ===== */
+#messages {
+    list-style: none;
+    margin: 0;
+    padding: 18px 14px 8px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Scrollbar (WebKit) */
+#messages::-webkit-scrollbar { width: 10px; }
+#messages::-webkit-scrollbar-thumb {
+    background: rgba(148,163,184,.25);
+    border-radius: 999px;
+}
+#messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Message bubble (default/unknown) */
+#messages li {
+    max-width: min(72%, 720px);
+    width: fit-content;
+    background: var(--bubble);
+    padding: 10px 12px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    animation: pop .12s ease-out;
+    border: 1px solid rgba(148,163,184,.12);
+}
+
+/* Sender alignment — add .me or .other in JS if poți */
+#messages li.me {
+    margin-left: auto;
+    background: var(--bubble-me);
+    border-top-right-radius: 6px;
+}
+#messages li.other {
+    margin-right: auto;
+    border-top-left-radius: 6px;
+}
+
+/* Optional tiny timestamp inside a message if you add <span class="time"> */
+#messages li .time {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    opacity: .85;
+}
+
+/* ===== Composer ===== */
+#composer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding: 12px;
+    background: color-mix(in oklab, var(--panel) 95%, transparent);
+    border-top: 1px solid rgba(148,163,184,.15);
+    box-shadow: 0 -10px 30px rgba(0,0,0,.25);
+}
+
+#composer input#msg {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148,163,184,.25);
+    background: #0b1020;
+    color: var(--text);
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+#composer input#msg::placeholder { color: rgba(229,231,235,.5); }
+#composer input#msg:focus {
+    border-color: color-mix(in oklab, var(--accent) 70%, white 10%);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
+}
+
+#composer button#send {
+    padding: 0 18px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 80%, #7c3aed 20%));
+    color: white;
+    font-weight: 700;
+    letter-spacing: .3px;
+    cursor: pointer;
+    transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+    box-shadow: 0 8px 18px rgba(79,70,229,.35);
+}
+#composer button#send:hover { filter: brightness(1.05); }
+#composer button#send:active { transform: translateY(1px); }
+
+/* ===== Small screens ===== */
+@media (max-width: 640px) {
+    #messages { padding: 12px 10px 6px; gap: 8px; }
+    #messages li { max-width: 86%; border-radius: 12px; }
+    #composer { padding: 10px; gap: 8px; }
+}
+
+/* ===== Animations ===== */
+@keyframes pop {
+    from { transform: scale(.98) translateY(2px); opacity: .0; }
+    to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* ===== Light mode (optional) ===== */
+@media (prefers-color-scheme: light) {
+    :root{
+        --bg: #f6f7fb;
+        --panel: #fff;
+        --text: #0b1220;
+        --muted: #64748b;
+        --bubble: #f1f5f9;
+        --bubble-me: #6366f1;
+        --shadow: 0 8px 22px rgba(0,0,0,.10);
+    }
+    nav { background: rgba(255,255,255,.8); }
+    #composer input#msg { background: #fff; color: #111827; }
+}

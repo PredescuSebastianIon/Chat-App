@@ -10,13 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
 @Controller
 @AllArgsConstructor
-public class ChatController {
+public class SearchController {
     private final SearchService searchService;
 
     @GetMapping(path = "api/search/users")
@@ -39,4 +38,5 @@ public class ChatController {
             throw new Exception(exception.getMessage());
         }
     }
+
 }

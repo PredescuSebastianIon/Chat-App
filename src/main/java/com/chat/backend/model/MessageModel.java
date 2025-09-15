@@ -14,11 +14,11 @@ public class MessageModel {
     @Column(name = "message_id")
     private Long messageId;
 
-    @Column(name = "message_from", nullable = false, updatable = false)
-    private Long messageFrom;
+    @Column(name = "user_id", nullable = false, updatable = false)
+    private Long userId;
 
-    @Column(name = "message_to", nullable = false, updatable = false)
-    private Long messageTo;
+    @Column(name = "chat_id", nullable = false, updatable = false)
+    private Long chatId;
 
     @Column(name = "content", nullable = false, columnDefinition = "text")
     private String content;
