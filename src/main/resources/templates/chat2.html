@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/chat2.css" />
     <title>Chatmi</title>
     <link rel="icon" href="/assets/chatmi-nobackground.png">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 </head>
 
-<body>
+<body th:attr="data-my-user-id=${currentUserId}">
     <nav>
         <ul>
             <li>
@@ -47,11 +49,19 @@
                 </li>
             </ul>
         </div>
+
+        <div id="chat">
+            <div id="status" style="padding:10px 14px; font-size:14px; color:#94a3b8;">Se conectează...</div>
+            <ul id="messages"></ul>
+
+            <div id="composer">
+                <input id="msg" type="text" placeholder="Scrie un mesaj..." autocomplete="off" />
+                <button id="send" type="button">Trimite</button>
+            </div>
+        </div>
     </div>
 
-
-
-    <script src="/javascript/home.js"></script>
+    <script src="/javascript/chat2.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ document.addEventListener('click', async (e) => {
         });
         if (!res.ok) throw new Error('Cannot start chat');
         const { chatId } = await res.json();
-        window.location.href = `/chat/${chatId}`;
+        window.location.href = `/chat2/${chatId}`;
     } catch (err) {
         console.error(err);
         alert('Nu am putut deschide chat-ul.');

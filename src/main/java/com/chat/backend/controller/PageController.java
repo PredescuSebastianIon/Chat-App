@@ -46,5 +46,10 @@ public class PageController {
         return "chat";
     }
 
+    @GetMapping("/chat2/{chatId}")
+    public String getChat(@PathVariable Long chatId, Model model, Principal p) {
+        Long currentUserId = userRepository.findByUsername(p.getName()).orElseThrow().getId();
+        model.addAttribute("currentUserId", currentUserId);
+        return "chat2";
+    }
 }
-
