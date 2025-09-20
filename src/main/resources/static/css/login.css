@@ -1,3 +1,7 @@
+* {
+    font-family: "Arimo", "sans-serif";
+}
+
 body {
     background-color: #7eabf2;
     height: 100vh;
@@ -30,22 +34,57 @@ body {
     align-items: center;
 }
 
-.casete {
-    height: 35px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    align-items: center;
-    text-align: left;
-    padding-left: 10px;
-    border-radius: 5px;
+
+.casete:focus {
+    outline: none;
 }
 
-.casete:hover {
+
+.casete,
+#box-password {
+    font-size: 14px;
+    height: 35px;
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: border 0.2s ease;
+}
+
+.casete:hover,
+#box-password:hover {
     border: 1px solid #0077ff;
 }
 
+/* Input simplu */
+.casete {
+    padding-left: 10px;
+}
+
+/* Input din interiorul casetei parolei */
+#casete-password {
+    flex: 1;
+    height: 90%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Iconul */
+#box-password img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+
 #remembertext {
-    margin-right:auto;
+    margin-right: auto;
     padding-bottom: 10px;
     font-size: 15px;
     font-weight: 200;

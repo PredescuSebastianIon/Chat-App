@@ -30,4 +30,4 @@ Find our live demo right [here]().
 ## Some coffee for energy
 
 If my project helped you and you want to see more from me, be sure to boost 
-my energy with a [coffee](https://ko-fi.com/sebypredescu) please :smiling:!
+my energy with a [coffee](https://ko-fi.com/sebypredescu) please :smiley:!

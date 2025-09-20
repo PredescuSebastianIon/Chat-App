@@ -32,11 +32,6 @@ public class PageController {
         return "friends";
     }
 
-//    @GetMapping("/chat/{chatId}")
-//    public String chat(@PathVariable Long chatId) {
-//        return "chat";
-//    }
-
     private final UserRepository userRepository;
 
     @GetMapping("/chat/{chatId}")

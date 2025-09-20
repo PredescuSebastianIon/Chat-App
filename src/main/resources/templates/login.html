@@ -18,13 +18,19 @@
         <h1 id="h1">Welcome to Chatmi</h1>
         <h1 id="h2">Please enter your details</h1>
         <input class="casete" type="text" name="username" placeholder="Username">
-        <input class="casete" type="password" name="password" placeholder="Password">
+        <div id="box-password">
+            <input id="casete-password" type="password" name="password" placeholder="Password">
+            <img id="visibility-img" src="/assets/ochi-taiat.png" alt="toggle" onclick="changeVisibility()">
+        </div>
+
         <div id="row">
             <span id="remembertext">Remember me<button id="rememberbutton"> </button></span>
             <span><a id="signup" href="register">Sign up</a></span>
         </div>
         <button id="butonlogin" type="submit">Login</button>
     </form>
+
+    <script src="/javascript/login.js"></script>
 
 </body>
 

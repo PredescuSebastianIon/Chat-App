@@ -66,7 +66,7 @@ public class SecurityConfig {
                 httpForm.defaultSuccessUrl("/home", true);
             })
             .authorizeHttpRequests(registry -> {
-                registry.requestMatchers("/login", "/register", "/css/**", "/javascript/**").permitAll();
+                registry.requestMatchers("/login", "/register", "/assets/**", "/css/**", "/javascript/**").permitAll();
                 registry.anyRequest().authenticated();
             })
             .logout(logout -> {
